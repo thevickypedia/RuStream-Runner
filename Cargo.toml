@@ -1,0 +1,11 @@
+[package]
+name = "rustream-runner"
+edition = "2021"
+
+[[bin]]
+name = "stream"
+path = "src/main.rs"
+
+[dependencies]
+RuStream = "0.0.1-temp"
+actix-rt = "2.9.0"
