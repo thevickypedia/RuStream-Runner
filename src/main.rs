@@ -1,7 +1,13 @@
-#[allow(non_snake_case)]
-use RuStream::start;
+use rustream;
 
 #[actix_rt::main]
 async fn main() {
-    start().await.unwrap();
+    match rustream::start().await {
+        Ok(_) => {
+            println!("Successfully served session")
+        }
+        Err(err) => {
+            eprintln!("Error starting rustream: {}", err)
+        }
+    }
 }
